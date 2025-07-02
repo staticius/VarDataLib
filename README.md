@@ -34,16 +34,16 @@ class Program
 {
     static void Main()
     {
-        int değer = -123456;
+        int value = -123456;
         using var ms = new MemoryStream();
         using var writer = new BinaryWriter(ms);
         using var reader = new BinaryReader(ms);
 
-        VarInt.Write(writer, değer);
+        VarInt.Write(writer, value);
         ms.Position = 0;
-        int çözülen = VarInt.Read(reader);
+        int decoded = VarInt.Read(reader);
 
-        Console.WriteLine($"Orijinal: {değer}, Çözülen: {çözülen}");
+        Console.WriteLine($"Orijinal: {value}, Çözülen: {decoded}");
     }
 }
 ```
